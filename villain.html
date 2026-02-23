@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Villains</title>
+</head>
+
+<body>
+
+<h1>Villains by Chanse Summers</h1>
+
+<label>Funny Man</label>
+<input type="password" id="secret" value="Joker"><br>
+
+<label>Guess the villain</label>
+<input type="text" id="guess"><br>
+
+<button onclick="checkVillain()">Check the guess</button>
+
+<p id="result"></p>
+
+<script>
+let caught = 0
+let gotAway = 0
+
+function checkVillain(){
+let secret = document.getElementById("secret").value
+let guess = document.getElementById("guess").value
+
+if(secret === guess){
+caught++
+alert("You caught them")
+}else{
+gotAway++
+alert("Maybe next time")
+}
+
+document.getElementById("result").innerHTML =
+"Caught: " + caught + " Got Away: " + gotAway
+}
+</script>
+
+</body>
+</html>
