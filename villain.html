@@ -19,7 +19,7 @@
 
 <p id="result"></p>
 
-<img id="treePic" src="tree1.jpg" width="150" height="150" onclick="updatePic()">
+<img id="treePic" src="tree1.jpg" width="150" height="150" style="cursor:pointer" onclick="updatePic()">
 
 <script>
 let caught = 0
@@ -44,21 +44,11 @@ document.getElementById("result").innerHTML =
 let usePic = 1
 
 function updatePic(){
-let pic = document.getElementById("treePic")
 
-usePic = usePic + 1
+alert("clicked")
+}
 
-if(usePic == 2){
-pic.src = "tree2.jpg"
-}
-else if(usePic == 3){
-pic.src = "tree3.jpg"
-}
-else{
-pic.src = "tree1.jpg"
-usePic = 1
-}
-}
+
 
 
 
