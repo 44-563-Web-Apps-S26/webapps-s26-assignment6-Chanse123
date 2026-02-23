@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Tax Table</title>
+</head>
+<body>
+
+<h1>Chanse Summers tax table computation</h1>
+
+<label>Enter income</label>
+<input id="income" type="number" value="5000"><br>
+
+<label>Enter the base tax rate</label>
+<input id="baseRate" type="number" value="0.05"><br>
+
+<label>Enter the cut off</label>
+<input id="cutoff" type="number" value="7500"><br>
+
+<label>Enter the extended rate</label>
+<input id="extRate" type="number" value="0.15"><br>
+
+<button onclick="doTax()">Show tax table</button>
+
+<div id="taxResult"></div>
+
+<script>
+function doTax(){
+let income = Number(document.getElementById("income").value)
+let baseRate = Number(document.getElementById("baseRate").value)
+let cutoff = Number(document.getElementById("cutoff").value)
+let extRate = Number(document.getElementById("extRate").value)
+
+let taxTable=""
+
+for(let i=1;i<=5;i++){
+let incomeLevel = i*income
+let tax
+
+if(incomeLevel<=cutoff){
+tax = incomeLevel*baseRate
+}else{
+tax = cutoff*baseRate + (incomeLevel-cutoff)*extRate
+}
+
+taxTable += "incomeLevel "+incomeLevel+" is "+tax+"; "
+}
+
+document.getElementById("taxResult").innerHTML =
+"Taxes are: "+taxTable
+}
+</script>
+
+</body>
+</html>
