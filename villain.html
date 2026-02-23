@@ -19,6 +19,8 @@
 
 <p id="result"></p>
 
+<img id="treePic" src="tree1.jpg" width="150" height="150" onclick="updatePic()">
+
 <script>
 let caught = 0
 let gotAway = 0
@@ -38,7 +40,31 @@ alert("Maybe next time")
 document.getElementById("result").innerHTML =
 "Caught: " + caught + " Got Away: " + gotAway
 }
+
+let usePic = 1
+
+function updatePic(){
+let pic = document.getElementById("treePic")
+
+usePic = usePic + 1
+
+if(usePic == 2){
+pic.src = "tree2.jpg"
+}
+else if(usePic == 3){
+pic.src = "tree3.jpg"
+}
+else{
+pic.src = "tree1.jpg"
+usePic = 1
+}
+}
+
+
+
 </script>
+
+
 
 </body>
 </html>
