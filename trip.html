@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Travel Planner</title>
+</head>
+<body>
+
+<h1>Chanse Summers travel planner</h1>
+
+<form>
+<input type="checkbox" id="cari"> Caribbean
+<input type="checkbox" id="medi"> Mediterranean
+<input type="checkbox" id="balt"> Baltic
+</form>
+
+<button onclick="choices()">Cruise Choices</button>
+
+<div id="tripResult"></div>
+
+<script>
+let my_trip = {}
+
+function choices(){
+my_trip = {}
+
+my_trip.cari = document.getElementById("cari").checked
+my_trip.medi = document.getElementById("medi").checked
+my_trip.balt = document.getElementById("balt").checked
+
+document.getElementById("tripResult").innerHTML =
+JSON.stringify(my_trip)
+}
+</script>
+
+</body>
+</html>
